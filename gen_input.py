@@ -91,7 +91,7 @@ def write_path(cities, num):
 def generate(numcit, numpath, grade):
     """random generation of the path"""
     cities = write_map(numcit, grade)
-    write_path(cities, numcit)
+    write_path(cities, numpath)
 
 
 def usage():
