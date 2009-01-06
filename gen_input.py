@@ -6,7 +6,7 @@
 
 import getopt
 from random import randrange, choice
-from sys import exit, argv
+from sys import exit, argv, stdout
 
 MAP_FILE = 'stradario.txt'
 PATH_FILE = 'percorso.txt'
@@ -30,7 +30,7 @@ def gen_cities(n_cit, fname='cities.txt'):
         for _ in range(n_cit - 1):
             start += randrange(jump_max)
             rand_c.append(cities[start].strip())
-        return '.'.join(rand_c)
+        return rand_c
 
 
 def gen_table(n_cit, conn_grade):
@@ -57,13 +57,11 @@ def gen_table(n_cit, conn_grade):
     return '.'.join(map(lambda x: str(x), flat)) + '.'
 
 
-def write_map(n_cit, conn_grade):
+def gen_map(cities, n_cit, conn_grade):
     """creates the random map file"""
-    cit = gen_cities(n_cit)
-    st = '.'.join([str(n_cit), cit, gen_table(n_cit, conn_grade)])
-    open(MAP_FILE, 'w').write(st)
-    return cit.split('.')
-    
+    st = '.'.join([str(n_cit), '.'.join(cities), gen_table(n_cit, conn_grade)])
+    return st
+
 
 def random_path(cities, num):
     """creates a random path of length num using the array cities"""
@@ -82,23 +80,25 @@ def random_path(cities, num):
         i += 1
     return path
 
-def write_path(cities, num):
+def gen_path(cities, lenpath):
     """writes the path obtained"""
-    pa = '.'.join(random_path(cities, num)) + '.'
-    open(PATH_FILE, 'w').write(pa)
-    return pa
+    return '.'.join(random_path(cities, lenpath)) + '.'
 
-def generate(numcit, numpath, grade):
-    """random generation of the path"""
-    cities = write_map(numcit, grade)
-    write_path(cities, numpath)
 
+def generate(n_cit, lenpath, grade, output):
+    """Generations of input and writing on the output files"""
+    cities = gen_cities(n_cit)
+    mappa, path = gen_map(cities, n_cit, grade), gen_path(cities, lenpath)
+    output[0].write(mappa)
+    output[1].write(path)
+    
 
 def usage():
     """docstring for usage"""
-    print """ ./gen_input.py [-n numcities] [-r lenpath] [-g connection_grade] [stradario] [percorso]
+    print """ ./gen_input.py [-n n_cities] [-r lenpath] [-g connection_grade] [stradario] [percorso] -o
+        If -o it will print output to standard output
         All the parameters have already a defualt value, which is
-        numcities   => 10
+        n_cities   => 10
         lenpath     => 10
         grade       => 5
         stradario   => "stradario.txt"
@@ -106,7 +106,7 @@ def usage():
     exit(BADARGS)
 
 if __name__ == '__main__':
-    opts, args = getopt.getopt(argv[1:], 'hr:n:g:')
+    opts, args = getopt.getopt(argv[1:], 'ohr:n:g:')
     # default value
     n_cities = npath = 10
     grade = 5                   # middle level of connection grade
@@ -121,8 +121,10 @@ if __name__ == '__main__':
             grade = int(a)
             if grade < 0 or grade > 10:
                 usage()
+        if o == '-o':
+            args = [stdout, stdout]
     if not args:
-        args = ["stradario.txt", "percorso.txt"]
+        args = [open("stradario.txt", "w"), open("percorso.txt", "w")]
     if len(args) == 1:
         usage()
-    generate(n_cities, npath, grade)
+    generate(n_cities, npath, grade, args)

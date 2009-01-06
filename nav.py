@@ -129,7 +129,7 @@ def main():
     """Main function"""
     strad = "stradario.txt"
     path = "percorso.txt"
-    draw = False
+    draw = True
     
     opts, args = getopt(argv[1:], "s:p:d")
     for o,a in opts:
