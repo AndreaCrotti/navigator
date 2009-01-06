@@ -1,10 +1,12 @@
 #!/usr/bin/env python
-# encoding: utf-8
 
-from random import randrange, choice
-import sys
+# This script generates the input file for the real program,
+# given a connection degree, the number of cities and the length
+# of the path to calculate
+
 import getopt
-
+from random import randrange, choice
+from sys import exit, argv
 
 MAP_FILE = 'stradario.txt'
 PATH_FILE = 'percorso.txt'
@@ -13,7 +15,7 @@ DST_MIN = 1
 DST_MAX = 10
 
 def gen_cities(n_cit, fname='cities.txt'):
-    """it returns n cities picked casually from fname"""
+    """Returns n cities picked casually from file fname"""
     cities = open(fname).readlines()
     # check if less cities than possible
     if n_cit > len(cities):
@@ -32,10 +34,14 @@ def gen_cities(n_cit, fname='cities.txt'):
 
 
 def gen_table(n_cit, conn_grade):
-    """docstring for build_map_mat"""
+    """Generates the table of distances between cities,
+    it basically works on the lower triangular matrix
+    automatically setting the upper part
+    """
     from operator import add
     def gen_distance():
-        """generates a random distance if threshold reached"""
+        """generates a random distance if threshold reached
+        Otherwise no connection => -1"""
         if randrange(0, 11) <= conn_grade:
             return randrange(DST_MIN, DST_MAX)
         else:
@@ -46,9 +52,11 @@ def gen_table(n_cit, conn_grade):
         res[i] = [0] * n_cit
         for j in range(i):
             res[i][j] = res[j][i] = gen_distance()
+    # FIXME heavy use of lambdas
     flat = reduce(lambda x, y: add(x, y), res)
     return '.'.join(map(lambda x: str(x), flat)) + '.'
-    
+
+
 def write_map(n_cit, conn_grade):
     """creates the random map file"""
     cit = gen_cities(n_cit)
@@ -88,12 +96,17 @@ def generate(numcit, numpath, grade):
 
 def usage():
     """docstring for usage"""
-    print """ ./gen_input.py [-n numcities] [-r lenpath] [stradario] [percorso]
-        by default """  
-    sys.exit(BADARGS)
+    print """ ./gen_input.py [-n numcities] [-r lenpath] [-g connection_grade] [stradario] [percorso]
+        All the parameters have already a defualt value, which is
+        numcities   => 10
+        lenpath     => 10
+        grade       => 5
+        stradario   => "stradario.txt"
+        percorso    => "percorso.txt"""
+    exit(BADARGS)
 
 if __name__ == '__main__':
-    opts, args = getopt.getopt(sys.argv[1:], 'hr:n:g:')
+    opts, args = getopt.getopt(argv[1:], 'hr:n:g:')
     # default value
     n_cities = npath = 10
     grade = 5                   # middle level of connection grade
@@ -109,7 +122,7 @@ if __name__ == '__main__':
             if grade < 0 or grade > 10:
                 usage()
     if not args:
-        args += ["stradario.txt", "percorso.txt"]
+        args = ["stradario.txt", "percorso.txt"]
     if len(args) == 1:
         usage()
     generate(n_cities, npath, grade)
