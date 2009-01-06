@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from string import join, split
 from copy import deepcopy
 from sys import maxint
 from os import system
@@ -11,32 +10,20 @@ import csv
 
 def parse_stradario(stradario):
     """parses the file containing the map"""
-    fmap = open(stradario, 'r')
-    toparse = fmap.readline().split('.')
+    toparse = open(stradario).readline().split('.')
     idx = 0 #indice di scorrimento
-    n = int(toparse[idx])
-    cities = toparse[1 : n+1]
-    idx = n + 1
+    ncities = int(toparse[idx])
+    cities = toparse[1 : ncities + 1]
+    idx = ncities + 1
     # main data structure used
     dst = {}
-    for jdx in range(0,n*n,n):
-        for kdx in range(n):
+    for jdx in range(0, ncities*ncities, ncities):
+        for kdx in range(ncities):
             val = int(toparse[idx+jdx+kdx])
             if val < 0:
                 val = maxint
-            dst[(cities[jdx/n],cities[kdx])] = val
-    fmap.close()
-    return n,cities,dst
-
-
-# def print_map(cities, dst):
-#     """pretty prints the map, or even output to csv file"""
-#     # first line
-#     print join("x"*8 + [ cit for cit in cities], "\t")
-#     for cit in cities:
-#         
-#             
-
+            dst[(cities[jdx / ncities], cities[kdx])] = val
+    return ncities, cities, dst
 
 def parse_percorso(percorso):
     """torna il percorso"""
@@ -44,28 +31,28 @@ def parse_percorso(percorso):
 
 def freccie(string_list):
     """inserisce una freccia"""
-    return join(string_list,".")
+    return '.'.join(string_list)
 
 
-def floyd_warshall(cities,dist):
+def floyd_warshall(cities, dist):
     """ritorna le distanze minime date le citta e le distanze iniziali"""
     dim = len(cities)
     old = new = {}
     # first cycle to set the initial configuration
     for c1 in cities:
         for c2 in cities:
-            old[(c1,c2)] = [dist[(c1,c2)], [c2]] # distanza e tappe intermedie
+            old[(c1, c2)] = [dist[(c1, c2)], [c2]] # distanza e tappe intermedie
     # ranging over the distance between nodes
-    for k in range(1,dim):
+    for k in range(1, dim):
         for c1 in cities:
             for c2 in cities:
-                diretto = old[(c1,c2)]
-                before = old[(c1,cities[k-1])]
-                after = old[(cities[k-1],c2)]
+                diretto = old[(c1, c2)]
+                before = old[(c1, cities[k-1])]
+                after = old[(cities[k-1], c2)]
                 if diretto[0] <= (before[0] + after[0]):
-                    new[(c1,c2)] = diretto
+                    new[(c1, c2)] = diretto
                 else:
-                    new[(c1,c2)] = [before[0]+after[0], before[1]+after[1]]
+                    new[(c1, c2)] = [before[0] + after[0], before[1]+after[1]]
         old = new
     return new
     
@@ -76,7 +63,6 @@ def draw2(cities, dist, path):
     except Exception.ImportError:
         print "pydot not present"
         return
-    # print "cities = ", cities, " path = ", path
     graph = pydot.Dot(graph_type='graph')
     nodes = []
     for c in cities:
@@ -152,7 +138,7 @@ def main():
     print freccie(tappe)
     print final_dist
     if draw:
-      draw2(cities,dist,tappe)
+        draw2(cities,dist,tappe)
 
 if __name__ == '__main__':
     main()

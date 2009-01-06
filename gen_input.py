@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# This script generates the input file for the real program,
+# This script generates the input file for the real program navigator,
 # given a connection degree, the number of cities and the length
 # of the path to calculate
 
@@ -19,7 +19,6 @@ def gen_cities(n_cit, fname='cities.txt'):
     cities = open(fname).readlines()
     # check if less cities than possible
     if n_cit > len(cities):
-        # TODO add this check to test suite
         raise Exception("not enough cities")
     else:
         rand_c = []
@@ -96,8 +95,8 @@ def generate(n_cit, lenpath, grade, output):
 def usage():
     """docstring for usage"""
     print """ ./gen_input.py [-n n_cities] [-r lenpath] [-g connection_grade] [stradario] [percorso] -o
-        If -o it will print output to standard output
-        All the parameters have already a defualt value, which is
+        If -o is given it will print output to standard output
+        All the parameters have already a default value, which is
         n_cities   => 10
         lenpath     => 10
         grade       => 5
@@ -124,7 +123,7 @@ if __name__ == '__main__':
         if o == '-o':
             args = [stdout, stdout]
     if not args:
-        args = [open("stradario.txt", "w"), open("percorso.txt", "w")]
+        args = [open(MAP_FILE, "w"), open(PATH_FILE, "w")]
     if len(args) == 1:
         usage()
     generate(n_cities, npath, grade, args)
