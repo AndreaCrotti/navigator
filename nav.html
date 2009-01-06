@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=ascii">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #808080 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0040D0 } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># encoding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">join</span><span class="p">,</span> <span class="n">split</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">maxint</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">system</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<span class="kn">from</span> <span class="nn">getopt</span> <span class="kn">import</span> <span class="n">getopt</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">def</span> <span class="nf">parse_stradario</span><span class="p">(</span><span class="n">stradario</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;parses the file containing the map&quot;&quot;&quot;</span>
+    <span class="n">fmap</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">stradario</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">toparse</span> <span class="o">=</span> <span class="n">fmap</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mf">0</span> <span class="c">#indice di scorrimento</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">toparse</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="n">cities</span> <span class="o">=</span> <span class="n">toparse</span><span class="p">[</span><span class="mf">1</span> <span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mf">1</span><span class="p">]</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mf">1</span>
+    <span class="c"># main data structure used</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">jdx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">kdx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">toparse</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="n">jdx</span><span class="o">+</span><span class="n">kdx</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">maxint</span>
+            <span class="n">dst</span><span class="p">[(</span><span class="n">cities</span><span class="p">[</span><span class="n">jdx</span><span class="o">/</span><span class="n">n</span><span class="p">],</span><span class="n">cities</span><span class="p">[</span><span class="n">kdx</span><span class="p">])]</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="n">fmap</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">n</span><span class="p">,</span><span class="n">cities</span><span class="p">,</span><span class="n">dst</span>
+
+
+<span class="c"># def print_map(cities, dst):</span>
+<span class="c">#     &quot;&quot;&quot;pretty prints the map, or even output to csv file&quot;&quot;&quot;</span>
+<span class="c">#     # first line</span>
+<span class="c">#     print join(&quot;x&quot;*8 + [ cit for cit in cities], &quot;\t&quot;)</span>
+<span class="c">#     for cit in cities:</span>
+<span class="c">#         </span>
+<span class="c">#             </span>
+
+
+<span class="k">def</span> <span class="nf">parse_percorso</span><span class="p">(</span><span class="n">percorso</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;torna il percorso&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">percorso</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">freccie</span><span class="p">(</span><span class="n">string_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;inserisce una freccia&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">join</span><span class="p">(</span><span class="n">string_list</span><span class="p">,</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">floyd_warshall</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span><span class="n">dist</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;ritorna le distanze minime date le citta e le distanze iniziali&quot;&quot;&quot;</span>
+    <span class="n">dim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="n">new</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c"># first cycle to set the initial configuration</span>
+    <span class="k">for</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+            <span class="n">old</span><span class="p">[(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">dist</span><span class="p">[(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)],</span> <span class="p">[</span><span class="n">c2</span><span class="p">]]</span> <span class="c"># distanza e tappe intermedie</span>
+    <span class="c"># ranging over the distance between nodes</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="n">dim</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+                <span class="n">diretto</span> <span class="o">=</span> <span class="n">old</span><span class="p">[(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)]</span>
+                <span class="n">before</span> <span class="o">=</span> <span class="n">old</span><span class="p">[(</span><span class="n">c1</span><span class="p">,</span><span class="n">cities</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mf">1</span><span class="p">])]</span>
+                <span class="n">after</span> <span class="o">=</span> <span class="n">old</span><span class="p">[(</span><span class="n">cities</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mf">1</span><span class="p">],</span><span class="n">c2</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">diretto</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">before</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">after</span><span class="p">[</span><span class="mf">0</span><span class="p">]):</span>
+                    <span class="n">new</span><span class="p">[(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">diretto</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new</span><span class="p">[(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">before</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">+</span><span class="n">after</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="n">before</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="o">+</span><span class="n">after</span><span class="p">[</span><span class="mf">1</span><span class="p">]]</span>
+        <span class="n">old</span> <span class="o">=</span> <span class="n">new</span>
+    <span class="k">return</span> <span class="n">new</span>
+    
+<span class="k">def</span> <span class="nf">draw2</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;draws the graphs&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">pydot</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="o">.</span><span class="n">ImportError</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;pydot not present&quot;</span>
+        <span class="k">return</span>
+    <span class="c"># print &quot;cities = &quot;, cities, &quot; path = &quot;, path</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">graph_type</span><span class="o">=</span><span class="s">&#39;graph&#39;</span><span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">path</span><span class="p">[</span><span class="mf">0</span><span class="p">]:</span>
+            <span class="n">n</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mf">1</span><span class="p">]:</span>
+            <span class="n">n</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;yellow&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">path</span><span class="p">[</span><span class="mf">1</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">-</span><span class="mf">1</span><span class="p">]:</span>
+            <span class="n">n</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;green&#39;</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cities</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cities</span><span class="p">)):</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[(</span><span class="n">cities</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cities</span><span class="p">[</span><span class="n">j</span><span class="p">])]</span>
+            <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">maxint</span><span class="p">:</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+                <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    
+    <span class="n">pathGraph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">graph_type</span><span class="o">=</span><span class="s">&#39;digraph&#39;</span><span class="p">)</span>
+    <span class="c"># very nice way to enumerate couples of a list</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mf">1</span>
+    <span class="k">for</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="p">[</span><span class="mf">1</span><span class="p">:]):</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">get_edge</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="mf">0</span>
+        <span class="c"># I could have more than one edge from get_edge</span>
+        <span class="c"># FIXME doesn&#39;t find the correct value </span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span>
+        <span class="n">e1</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">pydot</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">t1</span><span class="p">),</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">t2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>
+        <span class="n">pathGraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mf">1</span>
+    <span class="c"># print graph.to_string()</span>
+    <span class="n">pathGraph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s">&#39;pathgraph.png&#39;</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s">&#39;path.png&#39;</span><span class="p">)</span>
+    <span class="n">system</span><span class="p">(</span><span class="s">&#39;open path.png&#39;</span><span class="p">)</span>
+    <span class="n">system</span><span class="p">(</span><span class="s">&#39;open pathgraph.png&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">usage</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;docstring for usage&quot;&quot;&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">    ./nav.py [-s stradario] [-p path] [-d]</span>
+<span class="s">    nav.py gets as input (optional) a map and a path chosen and outputs the shortest path,</span>
+<span class="s">    optionally it also creates two nice graphs with pydot and open them.</span>
+<span class="s">    &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Main function&quot;&quot;&quot;</span>
+    <span class="n">strad</span> <span class="o">=</span> <span class="s">&quot;stradario.txt&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;percorso.txt&quot;</span>
+    <span class="n">draw</span> <span class="o">=</span> <span class="bp">True</span>
+    
+    <span class="n">opts</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">getopt</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mf">1</span><span class="p">:],</span> <span class="s">&quot;s:p:d&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">o</span><span class="p">,</span><span class="n">a</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="s">&#39;-s&#39;</span><span class="p">:</span>
+            <span class="n">strad</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="s">&#39;-p&#39;</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="s">&#39;-d&#39;</span><span class="p">:</span>
+            <span class="n">draw</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">n</span><span class="p">,</span> <span class="n">cities</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">parse_stradario</span><span class="p">(</span><span class="s">&#39;stradario.txt&#39;</span><span class="p">)</span>
+    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">floyd_warshall</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span><span class="n">dist</span><span class="p">)</span>
+    <span class="n">percorso</span> <span class="o">=</span> <span class="n">parse_percorso</span><span class="p">(</span><span class="s">&#39;percorso.txt&#39;</span><span class="p">)</span>
+    <span class="n">final_dist</span> <span class="o">=</span> <span class="mf">0</span>
+    <span class="n">tappe</span> <span class="o">=</span> <span class="p">[</span><span class="n">percorso</span><span class="p">[</span><span class="mf">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">percorso</span><span class="p">)</span><span class="o">-</span><span class="mf">1</span><span class="p">):</span>
+        <span class="n">dst</span> <span class="o">=</span> <span class="n">min_dist</span><span class="p">[(</span><span class="n">percorso</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">percorso</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mf">1</span><span class="p">])]</span>
+        <span class="n">final_dist</span> <span class="o">+=</span> <span class="n">dst</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+        <span class="n">tappe</span> <span class="o">+=</span> <span class="n">dst</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">freccie</span><span class="p">(</span><span class="n">tappe</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">final_dist</span>
+    <span class="k">if</span> <span class="n">draw</span><span class="p">:</span>
+      <span class="n">draw2</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span><span class="n">dist</span><span class="p">,</span><span class="n">tappe</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</body>
+</html>

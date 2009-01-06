@@ -1,0 +1,371 @@
+<table cellpadding="1" cellspacing="2">
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21"></td>
+                        <td width="32" height="21" bgcolor="#EAEFF6">AN</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >AO</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >BA</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >BO</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6" >CB</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >FI</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >GE</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >AQ</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >MI</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >NA</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >PG</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >PZ</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >RC</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >RM</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >TO</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >UD</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >VE</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Ancona </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">609</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >466</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">572</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">764</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >260</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">188</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">423</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">257</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">401</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">143</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >464</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">855</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >308</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">544</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >412</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">300</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Aosta</td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >609</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >1063</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">536</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">1292</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >471</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">785</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >783</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">354</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >940</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">622</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >1060</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1383</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >740</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">113</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >556</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">449</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Bari
+                        </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >466</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1063</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1026</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">348</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >662</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">407</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >877</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">711</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >255</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">567</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >140</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">439</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >412</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">998</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >866</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">754</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Bologna 
+                          &nbsp; </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >572</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">536</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >1026</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">923</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >101</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">393</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >206</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">206</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >570</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">253</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >668</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1014</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >370</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">327</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >265</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">158</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Campobasso 
+                          &nbsp;&nbsp; </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >764</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1292</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >348</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">923</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >472</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">702</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >736</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">570</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >137</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">377</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >201</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">542</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >222</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">857</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >725</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">613</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Firenze </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >260</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">471</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >662</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">101</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">472</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">230</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >315</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">295</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >468</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">151</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >607</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">912</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >268</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">400</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >365</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">258</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Genova</td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >188</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">785</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >407</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">393</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">702</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >230</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >555</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">253</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >707</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">389</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >846</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1150</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >507</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">170</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >509</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">402</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">L'Aquila
+                        </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >423</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">783</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >877</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">206</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">736</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >315</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">555</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">433</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >238</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">175</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >377</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">681</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >122</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">720</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >588</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">476</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Milano  </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >257</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">354</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >711</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">206</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">570</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >295</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">253</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >433</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >764</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">447</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >875</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1208</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >564</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">138</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >383</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">276</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Napoli </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >401</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">940</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >255</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">570</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">137</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >468</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">707</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >238</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">764</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">373</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >158</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">462</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >219</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">869</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >834</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">727</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Perugia
+                        </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >143</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">622</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >567</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">253</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">377</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >151</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">389</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >175</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">447</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >373</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >512</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">817</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >173</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">551</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >439</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">327</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Potenza
+                          &nbsp; </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >464</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1060</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >140</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">668</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">201</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >607</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">846</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >377</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">875</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >158</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">512</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">390</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >358</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">995</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >863</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">752</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">ReggioCalabria&nbsp; </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >855</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1383</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >439</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1014</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">542</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >912</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1150</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >681</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">1208</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >462</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">817</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >390</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >662</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1312</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >1278</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1171</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Roma
+                        </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >308</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">740</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >412</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">370</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">222</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >268</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">507</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >122</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">564</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >219</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">173</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >358</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">662</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">669</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >634</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">527</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Torino </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >544</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">113</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >998</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">327</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">857</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >400</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">170</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >720</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">138</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >869</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">551</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >995</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1312</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >669</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">-</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >512</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">405</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Udine 
+                        </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >412</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">556</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >866</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">265</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">725</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >365</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">509</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >588</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">383</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >834</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">439</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >863</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1278</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >634</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">512</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >-</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">127</td>
+                      </tr>
+                      <tr align="left" valign="middle" class="centralColumn"> 
+                        <td width="119" height="21" bgcolor="#EAEFF6">Venezia
+                        </td>
+                        <td width="32" height="21" bgcolor="#EAEFF6" >300</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">449</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >754</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">158</td>
+                        <td width="22" height="21" bgcolor="#EAEFF6">613</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >258</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">402</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >476</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">276</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >727</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6">327</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >752</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">1171</td>
+                        <td width="20" height="21" bgcolor="#EAEFF6" >527</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">405</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6" >127</td>
+                        <td width="26" height="21" bgcolor="#EAEFF6">-</td>
+                      </tr>
+                    </table>
