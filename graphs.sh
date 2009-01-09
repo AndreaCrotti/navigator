@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #filename = data.$program
 
-LANGS="python prolog lisp"
+LANGS="python lisp"
 # 
 function get_prog {
   case $1 in

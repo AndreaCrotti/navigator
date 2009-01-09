@@ -6,12 +6,11 @@ from sys import maxint
 from os import system
 from sys import argv
 from getopt import getopt
-import csv
 
 def parse_stradario(stradario):
     """parses the file containing the map"""
     toparse = open(stradario).readline().split('.')
-    idx = 0 #indice di scorrimento
+    idx = 0
     ncities = int(toparse[idx])
     cities = toparse[1 : ncities + 1]
     idx = ncities + 1
@@ -28,11 +27,6 @@ def parse_stradario(stradario):
 def parse_percorso(percorso):
     """torna il percorso"""
     return file.readline(open(percorso,'r')).split('.')[:-1]
-
-def freccie(string_list):
-    """inserisce una freccia"""
-    return '.'.join(string_list)
-
 
 def floyd_warshall(cities, dist):
     """ritorna le distanze minime date le citta e le distanze iniziali"""
@@ -89,7 +83,6 @@ def draw2(cities, dist, path):
         e = graph.get_edge(t1, t2)
         w = 0
         # I could have more than one edge from get_edge
-        # FIXME doesn't find the correct value 
         if isinstance(e, list):
             w = e[0].get_weight()
         else:
@@ -126,16 +119,16 @@ def main():
         if o in '-d':
             draw = False
 
-    n, cities, dist = parse_stradario('stradario.txt')
+    n, cities, dist = parse_stradario(strad)
     min_dist = floyd_warshall(cities,dist)
-    percorso = parse_percorso('percorso.txt')
+    percorso = parse_percorso(path)
     final_dist = 0
     tappe = [percorso[0]]
     for i in range(len(percorso)-1):
         dst = min_dist[(percorso[i],percorso[i+1])]
         final_dist += dst[0]
         tappe += dst[1]
-    print freccie(tappe)
+    print '.'.join(tappe)
     print final_dist
     if draw:
         draw2(cities,dist,tappe)

@@ -25,7 +25,7 @@ parseInput = do
 -- FIXME use a real parser
 -- start to parse
 
--- split with a delimiter, really haskellia
+-- split with a delimiter
 splitBy :: (a -> Bool) -> [a] -> [[a]] 
 splitBy _ [] = [] 
 splitBy f list =  first : splitBy f (dropWhile f rest) where 
