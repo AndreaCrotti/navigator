@@ -17,6 +17,7 @@ def parseInput
   [cities, dists, path]
 end
 
+
 def floyd_warshall(cities, dist)
   dim = cities.length
   floyd = old = {}

@@ -1,9 +1,7 @@
 #!/usr/bin/env python
-# encoding: utf-8
 
 from copy import deepcopy
 from sys import maxint
-from os import system
 from sys import argv
 from getopt import getopt
 
@@ -16,26 +14,27 @@ def parse_stradario(stradario):
     idx = ncities + 1
     # main data structure used
     dst = {}
-    for jdx in range(0, ncities*ncities, ncities):
+    for jdx in range(0, ncities * ncities, ncities):
         for kdx in range(ncities):
-            val = int(toparse[idx+jdx+kdx])
+            val = int(toparse[idx + jdx + kdx])
             if val < 0:
+                # FIXME other ways to handle the no link?
                 val = maxint
             dst[(cities[jdx / ncities], cities[kdx])] = val
     return ncities, cities, dst
 
 def parse_percorso(percorso):
-    """torna il percorso"""
+    """parses the path"""
     return file.readline(open(percorso,'r')).split('.')[:-1]
 
 def floyd_warshall(cities, dist):
-    """ritorna le distanze minime date le citta e le distanze iniziali"""
+    """returns a dictionary containing the minumum distances between cities"""
     dim = len(cities)
     old = new = {}
     # first cycle to set the initial configuration
     for c1 in cities:
         for c2 in cities:
-            old[(c1, c2)] = [dist[(c1, c2)], [c2]] # distanza e tappe intermedie
+            old[(c1, c2)] = [dist[(c1, c2)], [c2]]
     # ranging over the distance between nodes
     for k in range(1, dim):
         for c1 in cities:
@@ -50,12 +49,12 @@ def floyd_warshall(cities, dist):
         old = new
     return new
     
-def draw2(cities, dist, path):
+def draw(cities, dist, path):
     """draws the graphs"""
     try:
         import pydot
     except Exception.ImportError:
-        print "pydot not present"
+        print "pydot not present, install it if you want to graph"
         return
     graph = pydot.Dot(graph_type='graph')
     nodes = []
@@ -90,37 +89,34 @@ def draw2(cities, dist, path):
         e1 = pydot.Edge(pydot.Node(t1, label=t1), pydot.Node(t2, label=t2), label=str(i)+"(" + w + ")")
         pathGraph.add_edge(e1)
         i += 1
-    # print graph.to_string()
     pathGraph.write_png('pathgraph.png')
     graph.write_png('path.png')
-    system('open path.png')
-    system('open pathgraph.png')
 
 def usage():
     """docstring for usage"""
     print """
     ./nav.py [-s stradario] [-p path] [-d]
     nav.py gets as input (optional) a map and a path chosen and outputs the shortest path,
-    optionally it also creates two nice graphs with pydot and open them.
+    optionally with option [-d] it also creates two nice graphs with pydot and open them.
     """
 
 def main():
     """Main function"""
     strad = "stradario.txt"
     path = "percorso.txt"
-    draw = True
+    isdraw = False
     
     opts, args = getopt(argv[1:], "s:p:d")
-    for o,a in opts:
+    for o, a in opts:
         if o in '-s':
             strad = a
         if o in '-p':
             path = a
         if o in '-d':
-            draw = False
+            isdraw = True
 
     n, cities, dist = parse_stradario(strad)
-    min_dist = floyd_warshall(cities,dist)
+    min_dist = floyd_warshall(cities, dist)
     percorso = parse_percorso(path)
     final_dist = 0
     tappe = [percorso[0]]
@@ -130,8 +126,8 @@ def main():
         tappe += dst[1]
     print '.'.join(tappe)
     print final_dist
-    if draw:
-        draw2(cities,dist,tappe)
+    if isdraw:
+        draw(cities, dist, tappe)
 
 if __name__ == '__main__':
     main()
