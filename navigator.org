@@ -1,0 +1,17 @@
+* Contents of the package
+  |---------------+--------------------------------------------------------------------------------|
+  | file          |                                                                                |
+  |---------------+--------------------------------------------------------------------------------|
+  | nav.lisp      | lisp version                                                                   |
+  | nav.pl        | prolog                                                                         |
+  | nav.py        | python                                                                         |
+  | nav.hs        | haskell                                                                        |
+  | gen_input.py  | generator of random instances for the problem                                  |
+  | runlisp.sh    | script to automatically run the lisp program (works with sbcl)                 |
+  | stradario.txt | map of cities and distances                                                    |
+  | percorso.txt  | path file                                                                      |
+  | path.png      |                                                                                |
+  | graph.png     |                                                                                |
+  | graphs.sh     | shell script to generate the performance graphs                                |
+  | cities_it     | citta italiane dopo un dumping dell'interprete python, utilizzato da gen_input |
+  

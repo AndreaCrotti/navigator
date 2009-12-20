@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from copy import deepcopy
 from sys import maxint
 from sys import argv
 from getopt import getopt
@@ -53,7 +52,7 @@ def draw(cities, dist, path):
     """draws the graphs"""
     try:
         import pydot
-    except Exception.ImportError:
+    except ImportError:
         print "pydot not present, install it if you want to graph"
         return
     graph = pydot.Dot(graph_type='graph')

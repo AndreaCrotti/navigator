@@ -1,19 +1,20 @@
 #!/usr/bin/env swipl -L0 -q -g main -s
 
-/* Schema di funzionamento generale :
-	Parsing dell'input =>
-	scrittura di distanze e citta su file temporaneo =>
-	consultazione =>
-	esecuzione di floyd Warshall e consultazione delle minime distanze =>
-	calcolo progressivo del percorso ottimale =>
-	scrittura su output del risultato ottenuto
-*/
+%% General working schema:
+%% -------------------------------
+%% - parsing input
+%% - writing temp results on files
+%% - consulting temp results
+%% - computing optimal path
+%% - write on output final result
+%% --------------------------------
 
-%% file utilizzati nella computazione
+% files used during the computation
 dist_file('dist_file.pl').
 new('new.pl').
 last('last.pl').
-%% costante alta
+
+% costante alta
 high(1000).
 
 %% Main function, automatically called with the shebang
