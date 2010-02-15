@@ -1,10 +1,20 @@
 #!/usr/bin/env python
 
-from sys import maxint
+# - add logging support
+# - rewrite code more modular (using decorators also)
+# - make it faster and smarter
+# - add test case and use nose for them
+# - remove ugly maxint usage
+# - testing with timeit and more
+
 from sys import argv
 from getopt import getopt
+from numpy import inf # really needed just for this?
 
-def parse_stradario(stradario):
+MAP_FILE = "stradario.txt"
+PATH_FILE = "percorso.txt"
+
+def parse_map_file(stradario):
     """parses the file containing the map"""
     toparse = open(stradario).readline().split('.')
     idx = 0
@@ -18,11 +28,11 @@ def parse_stradario(stradario):
             val = int(toparse[idx + jdx + kdx])
             if val < 0:
                 # FIXME other ways to handle the no link?
-                val = maxint
+                val = inf
             dst[(cities[jdx / ncities], cities[kdx])] = val
     return ncities, cities, dst
 
-def parse_percorso(percorso):
+def parse_path(percorso):
     """parses the path"""
     return file.readline(open(percorso,'r')).split('.')[:-1]
 
@@ -53,7 +63,7 @@ def draw(cities, dist, path):
     try:
         import pydot
     except ImportError:
-        print "pydot not present, install it if you want to graph"
+        print "pydot not present, install it if you want to see the graph"
         return
     graph = pydot.Dot(graph_type='graph')
     nodes = []
@@ -70,7 +80,7 @@ def draw(cities, dist, path):
     for i in range(len(cities)):
         for j in range(i + 1, len(cities)):
             d = dist[(cities[i], cities[j])]
-            if d < maxint:
+            if d < inf:
                 e = pydot.Edge(nodes[i], nodes[j], weight=str(d), label=str(d))
                 graph.add_edge(e)
     
@@ -94,29 +104,23 @@ def draw(cities, dist, path):
 def usage():
     """docstring for usage"""
     print """
-    ./nav.py [-s stradario] [-p path] [-d]
+    ./nav.py [-d]
     nav.py gets as input (optional) a map and a path chosen and outputs the shortest path,
     optionally with option [-d] it also creates two nice graphs with pydot and open them.
     """
 
 def main():
     """Main function"""
-    strad = "stradario.txt"
-    path = "percorso.txt"
     isdraw = False
     
     opts, args = getopt(argv[1:], "s:p:d")
     for o, a in opts:
-        if o in '-s':
-            strad = a
-        if o in '-p':
-            path = a
         if o in '-d':
             isdraw = True
 
-    n, cities, dist = parse_stradario(strad)
+    n, cities, dist = parse_map_file(MAP_FILE)
     min_dist = floyd_warshall(cities, dist)
-    percorso = parse_percorso(path)
+    percorso = parse_path(PATH_FILE)
     final_dist = 0
     tappe = [percorso[0]]
     for i in range(len(percorso)-1):
